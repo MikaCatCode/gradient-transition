@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 1200px;
+  padding: 0 40px;
+  width: 100%;
+  margin: 100px auto;
+}
+
+h2 {
+  font-size: 50px;
+  margin: 0 auto 20px auto;
+  color: rgb(226, 43, 168);
+  text-align: center;
+  position: relative;
+}
+h2::before {
+  content: attr(aria-label);
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(rgb(78, 2, 58), rgb(238, 56, 141));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+h2:hover:before {
+  opacity: 1;
+}
+
+.block-one {
+  width: 300px;
+  margin: 0 auto;
+  background: rgb(8, 99, 155);
+  padding: 10px;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+  z-index: 1;
+}
+.block-one:before {
+  content: "";
+  display: block;
+  inset: 0;
+  background: linear-gradient(darkblue, darkorchid);
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: -1;
+}
+.block-one:hover:before {
+  opacity: 1;
+}
+
+.block-two {
+  width: 300px;
+  margin: 0 auto;
+  background: rgb(8, 99, 155);
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+}
+.block-two:before {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 10px solid rgb(5, 40, 146);
+}
+.block-two:after {
+  content: "";
+  display: block;
+  position: absolute;
+  inset: 0;
+  border: 10px solid rgb(5, 40, 146);
+  border-image: linear-gradient(darkblue, darkorchid) 1;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.block-two:hover:after {
+  opacity: 1;
+}
+
+a {
+  background: rgb(8, 99, 155);
+  color: #fff;
+  display: block;
+  max-width: 200px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  text-align: center;
+  text-decoration: none;
+}
+
+button {
+  background: rgb(8, 99, 155);
+  color: #fff;
+  display: block;
+  font-size: inherit;
+  max-width: 200px;
+  margin: 0 auto 20px auto;
+  padding: 15px;
+  border: none;
+}
+
+.block-three {
+  width: 300px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  color: #fff;
+  position: relative;
+}
+.block-three > div {
+  background: rgb(8, 99, 155);
+  position: relative;
+  padding: 20px;
+}
+.block-three:before {
+  content: "";
+  display: block;
+  background: linear-gradient(darkblue, darkorchid);
+  position: absolute;
+  inset: -3px;
+  filter: blur(5px);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+.block-three:hover:before {
+  opacity: 1;
+}
